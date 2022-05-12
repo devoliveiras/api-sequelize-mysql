@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     desc_niveL: DataTypes.STRING
   }, {
     sequelize,
+    paranoid: true,
     modelName: 'Niveis',
   });
   return Niveis;
