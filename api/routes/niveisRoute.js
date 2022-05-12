@@ -9,5 +9,8 @@ router.post('/niveis', NivelController.criaNivel)
 router.put('/niveis/:id', NivelController.atualizaNivel)
 router.delete('/niveis/:id', NivelController.deletarNivel)
 
+//Rota para restaurar registro deletados com soft delete
+router.post('/niveis/:id/restaura', NivelController.restauraNivel)
+
 
 module.exports = router 

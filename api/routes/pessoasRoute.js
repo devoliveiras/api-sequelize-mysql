@@ -9,6 +9,9 @@ router.post('/pessoas', PessoaController.criaPessoa)
 router.put('/pessoas/:id', PessoaController.atualizaPessoa)
 router.delete('/pessoas/:id', PessoaController.deletarPessoa)
 
+//Rota para restaurar registro deletados com soft delete
+router.post('/pessoas/:id/restaura', PessoaController.restauraPessoa)
+
 //Rotas para matrículas
 router.get('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.pegaUmaMatricula)
 router.post('/pessoas/:estudanteId/matricula', PessoaController.criaMatricula)
