@@ -22,5 +22,8 @@ router.post('/pessoas/:estudanteId/matricula', PessoaController.criaMatricula)
 router.put('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.atualizaMatricula)
 router.delete('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.deletarMatricula)
 
+//Rota de cancelamento de pessoa
+router.post('/pessoas/:estudanteId/cancela', PessoaController.cancelaPessoa)
+
 
 module.exports = router 

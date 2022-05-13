@@ -201,6 +201,23 @@ class  PessoaController {
         }
     }
 
+    static async cancelaPessoa (req, res){
+        const { estudanteId } = req.params
+
+        try{
+            //Atualiza o status ativo>cancelado do estudante e cancela matriculas referente a ele
+            await database.Pessoas
+                .update({ ativo: false }, { where: { id: Number(estudanteId) } })
+            
+            await database.Matriculas
+                .update({ status: 'cancelado' }, { where: { estudante_id: Number(estudanteId) } })
+
+            return res.status(200).json({ message: `Matriculas ref. estudante ${estudanteId} canceladas` })    
+        }
+        catch(error){
+            return res.status(500).json(error.message)
+        }
+    }
 
 }
 
